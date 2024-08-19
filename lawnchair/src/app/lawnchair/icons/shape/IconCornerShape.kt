@@ -105,39 +105,39 @@ sealed class IconCornerShape {
     }
 
 
-object Pebble : IconCornerShape.BaseBezierPath() {
+    object Pebble : IconCornerShape.BaseBezierPath() {
 
-    
-    override val controlDistanceX: Float = 0.35f  
-    override val controlDistanceY: Float = 0.25f
+        
+        override val controlDistanceX: Float = 0.35f  
+        override val controlDistanceY: Float = 0.25f
 
-    
-    override fun addCorner(
-        path: Path,
-        position: Position,
-        size: PointF,
-        progress: Float,
-        offsetX: Float,
-        offsetY: Float
-    ) {
         
-        val controlDistanceX = Utilities.mapRange(progress, this.controlDistanceX, roundControlDistance)
-        val controlDistanceY = Utilities.mapRange(progress, this.controlDistanceY, roundControlDistance)
+        override fun addCorner(
+            path: Path,
+            position: Position,
+            size: PointF,
+            progress: Float,
+            offsetX: Float,
+            offsetY: Float
+        ) {
+            
+            val controlDistanceX = Utilities.mapRange(progress, this.controlDistanceX, roundControlDistance)
+            val controlDistanceY = Utilities.mapRange(progress, this.controlDistanceY, roundControlDistance)
+            
+            
+            path.cubicTo(
+                getControl1X(position, controlDistanceX) * size.x + offsetX,
+                getControl1Y(position, controlDistanceY) * size.y + offsetY,
+                getControl2X(position, controlDistanceX) * size.x + offsetX,
+                getControl2Y(position, controlDistanceY) * size.y + offsetY,
+                position.endX * size.x + offsetX,
+                position.endY * size.y + offsetY
+            )
+        }
+
         
-        
-        path.cubicTo(
-            getControl1X(position, controlDistanceX) * size.x + offsetX,
-            getControl1Y(position, controlDistanceY) * size.y + offsetY,
-            getControl2X(position, controlDistanceX) * size.x + offsetX,
-            getControl2Y(position, controlDistanceY) * size.y + offsetY,
-            position.endX * size.x + offsetX,
-            position.endY * size.y + offsetY
-        )
+        override fun toString(): String = "pebble"
     }
-
-    
-    override fun toString(): String = "pebble"
-}
 
 
     object Squircle : BaseBezierPath() {

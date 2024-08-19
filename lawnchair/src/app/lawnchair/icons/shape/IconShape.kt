@@ -296,16 +296,16 @@ open class IconShape(
         }
     }
     object Pebble : IconShape(
-    IconCornerShape.arc,
-    IconCornerShape.arc,
-    IconCornerShape.arc,
-    IconCornerShape.arc,
-    PointF(1f, 0.8f),  // Customize these scaling factors for the pebble shape
-    PointF(0.9f, 1f),  // Adjust to create the desired effect
-    PointF(1f, 0.9f),
-    PointF(0.8f, 1f),
+        IconCornerShape.arc,
+        IconCornerShape.arc,
+        IconCornerShape.arc,
+        IconCornerShape.arc,
+        PointF(1f, 0.8f),  
+        PointF(0.9f, 1f),  
+        PointF(1f, 0.9f),
+        PointF(0.8f, 1f),
     ) {
-    override val windowTransitionRadius = 0.7f  // Customize as needed
+    override val windowTransitionRadius = 0.7f
 
     override fun toString(): String {
         return "pebble"
