@@ -118,7 +118,7 @@ sealed class IconCornerShape {
             size: PointF,
             progress: Float,
             offsetX: Float,
-            offsetY: Float
+            offsetY: Float,
         ) {
             
             val controlDistanceX = Utilities.mapRange(progress, this.controlDistanceX, roundControlDistance)
