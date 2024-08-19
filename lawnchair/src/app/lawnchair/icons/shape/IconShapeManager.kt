@@ -67,6 +67,7 @@ class IconShapeManager(private val context: Context) {
         val shapeR = Region()
         return listOf(
             IconShape.Circle,
+            IconShape.Pebble,
             IconShape.Square,
             IconShape.RoundedSquare,
             IconShape.Squircle,
