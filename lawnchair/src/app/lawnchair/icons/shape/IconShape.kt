@@ -296,10 +296,10 @@ open class IconShape(
         }
     }
     object Pebble : IconShape(
-        IconCornerShape.arc,
-        IconCornerShape.arc,
-        IconCornerShape.arc,
-        IconCornerShape.arc,
+        IconCornerShape.Pebble,
+        IconCornerShape.Pebble,
+        IconCornerShape.Pebble,
+        IconCornerShape.Pebble,
         PointF(1f, 0.8f),  
         PointF(0.9f, 1f),  
         PointF(1f, 0.9f),
